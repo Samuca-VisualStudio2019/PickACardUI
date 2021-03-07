@@ -24,5 +24,15 @@ namespace PickACardUI
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string[] pickCards = CardPicker.PickSomeCards((int)numberOfCards.Value);
+            listOfCards.Items.Clear();
+            foreach (string card in pickCards)
+            {
+                listOfCards.Items.Add(card);
+            }
+        }
     }
 }
